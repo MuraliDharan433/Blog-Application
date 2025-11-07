@@ -13,7 +13,7 @@ export const addPost = async (req, res) => {
       image: req.file ? `/uploads/${req.file.filename}` : null,
     });
 
-    res.status(201).json({ message: "Post added successfully", data: newPost });
+    res.status(201).json({ newPost });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -61,7 +61,8 @@ export const updatedPost = async (req, res) => {
 
     post.title = req.body.title || post.title;
     post.content = req.body.content || post.content;
-    if (req.fill) post.image = `/upoloads/${req.file.filename}`;
+
+    if (req.file) post.image = `/uploads/${req.file.filename}`;
 
     await post.save();
 

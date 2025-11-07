@@ -2,8 +2,6 @@ import User from "../model/User.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 
-
-
 // Generate A JWT Token For Verify a User
 const generateToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: "7d" });
@@ -16,8 +14,6 @@ export const register = async (req, res) => {
 
     const existingUser = await User.findOne({ email });
 
-    console.log(existingUser);
-
     if (existingUser)
       return res.status(400).json({ message: "User already exists" });
 
@@ -28,7 +24,7 @@ export const register = async (req, res) => {
       username,
       email,
       password: hashedPasswod,
-      profileImage: req.file ? `/upoload/profile/${req.file.filename}` : "",
+      profileImage: req.file ? `/uploads/profile/${req.file.filename}` : "",
     });
 
     //Response
@@ -45,7 +41,6 @@ export const register = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-
 
 //Login Controller
 export const login = async (req, res) => {
@@ -66,6 +61,7 @@ export const login = async (req, res) => {
       _id: user._id,
       username: user.username,
       email: user.email,
+      profileImage: user.profileImage,
       token: generateToken(user._id),
     });
   } catch (error) {
