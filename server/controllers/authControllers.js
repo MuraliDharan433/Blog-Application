@@ -2,10 +2,14 @@ import User from "../model/User.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 
+
+
+// Generate A JWT Token For Verify a User
 const generateToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: "7d" });
 };
 
+// Register Controller
 export const register = async (req, res) => {
   try {
     const { username, email, password } = req.body;
@@ -17,14 +21,17 @@ export const register = async (req, res) => {
     if (existingUser)
       return res.status(400).json({ message: "User already exists" });
 
+    //Hasing a Password
     const hashedPasswod = await bcrypt.hash(password, 10);
 
     const newUser = await User.create({
       username,
       email,
       password: hashedPasswod,
+      profileImage: req.file ? `/upoload/profile/${req.file.filename}` : "",
     });
 
+    //Response
     res.status(201).json({
       message: "User is Created Successfully",
       data: {
@@ -39,6 +46,8 @@ export const register = async (req, res) => {
   }
 };
 
+
+//Login Controller
 export const login = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -47,6 +56,7 @@ export const login = async (req, res) => {
 
     if (!user) return res.status(404).json({ message: "User not found" });
 
+    //Compare a passwords
     const isMatch = await bcrypt.compare(password, user.password);
 
     if (!isMatch)

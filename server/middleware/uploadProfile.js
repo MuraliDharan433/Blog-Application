@@ -3,9 +3,8 @@ import path from "path";
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "uploads/");
+    cb(null, "uploads/profile");
   },
-
   filename: (req, file, cb) => {
     cb(null, Date.now() + path.extname(file.originalname));
   },
@@ -13,10 +12,10 @@ const storage = multer.diskStorage({
 
 const fileFilter = (req, file, cb) => {
   const allowed = ["image/jpeg", "image/png", "image/jpg"];
-  allowed.includes(file.mimetype)
-    ? cb(null, true)
-    : cb(new Error("Only image files are allowed"), false);
+  if (allowed.includes(file.mimetype)) cb(null, true);
+  else cb(new Error("Invalid file type. Only JPEG and PNG allowed"), false);
 };
 
-const upload = multer({ storage, fileFilter });
-export default upload;
+const uploadProfile = multer({ storage, fileFilter });
+
+export default uploadProfile;
