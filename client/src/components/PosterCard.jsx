@@ -6,7 +6,7 @@ function PosterCard({ post }) {
     <div className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300">
       {post.image && (
         <img
-          src={`http://localhost:4000${post.image}`}
+          src={`https://blog-application-1-2jag.onrender.com${post.image}`}
           alt={post.title}
           className="w-full h-48 object-cover"
         />
@@ -24,7 +24,7 @@ function PosterCard({ post }) {
         <div className="flex items-center gap-3 mb-4">
           {post.author?.profileImage && (
             <img
-              src={`http://localhost:4000${post.author.profileImage}`}
+              src={`https://blog-application-1-2jag.onrender.com${post.author.profileImage}`}
               alt={post.author.username}
               className="w-8 h-8 rounded-full object-cover border"
             />
