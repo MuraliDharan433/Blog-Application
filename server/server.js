@@ -16,7 +16,7 @@ app.use(cors());
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://blog-application-2-xz3g.onrender.com",
     credentials: true,
   })
 );
