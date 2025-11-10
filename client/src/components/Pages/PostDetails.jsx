@@ -80,7 +80,7 @@ function PostDetails() {
       <div className="bg-white shadow-md rounded-lg overflow-hidden">
         {post.image && (
           <img
-            src={`http://localhost:4000${post.image}`}
+            src={`https://blog-application-1-2jag.onrender.com${post.image}`}
             alt={post.title}
             className="w-full h-80 object-cover"
           />
@@ -112,7 +112,7 @@ function PostDetails() {
           <div className="flex items-center gap-3 mb-4">
             {post.author?.profileImage && (
               <img
-                src={`http://localhost:4000${post.author.profileImage}`}
+                src={`https://blog-application-1-2jag.onrender.com${post.author.profileImage}`}
                 alt={post.author.username}
                 className="w-10 h-10 rounded-full object-cover border"
               />
