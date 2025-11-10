@@ -27,7 +27,7 @@ function EditPost() {
     if (post) {
       setTitle(post.title);
       setContent(post.content);
-      setPreview(`http://localhost:4000${post.image}`);
+      setPreview(`https://blog-application-1-2jag.onrender.com${post.image}`);
     }
   }, [post]);
 
