@@ -1,0 +1,966 @@
+{
+  "cases": [
+    {
+      "id": "suite:blog-pages:navigate-to-home:positive",
+      "title": "Navigate to Home — positive",
+      "scenario": "positive",
+      "role": "Guest",
+      "steps": [
+        {
+          "text": "Start from a non-home page such as the Login screen."
+        },
+        {
+          "text": "Click the site name link labeled 'BlogApp' in the top navigation bar."
+        }
+      ],
+      "expected": [
+        {
+          "text": "The app navigates to the home page."
+        },
+        {
+          "text": "The heading '📰 Latest Blog Posts' is visible."
+        },
+        {
+          "text": "If posts exist, they are shown as cards with a 'Read More →' link on each card. If no posts exist, the message 'No posts available. Be the first to create one!' is visible."
+        }
+      ],
+      "expectedResult": "The app navigates to the home page. The heading '📰 Latest Blog Posts' is visible. If posts exist, they are shown as cards with a 'Read More →' link on each card. If no posts exist, the message 'No posts available. Be the first to create one!' is visible.",
+      "expectedSuccess": "The app navigates to the home page. The heading '📰 Latest Blog Posts' is visible. If posts exist, they are shown as cards with a 'Read More →' link on each card. If no posts exist, the message 'No posts available. Be the first to create one!' is visible.",
+      "expectedFailure": "",
+      "status": "pending",
+      "inputFingerprint": "8fb945aabab3818c52cf947a6f43564c0339a962bea9c825eb616f2647b46189",
+      "suiteId": "blog-pages",
+      "suiteName": "Blog Pages"
+    },
+    {
+      "id": "suite:blog-pages:open-back-to-home:positive",
+      "title": "Open Back to Home — positive",
+      "scenario": "positive",
+      "role": "Guest",
+      "steps": [
+        {
+          "text": "Start from a post detail page or the 404 page where the back link is visible."
+        },
+        {
+          "text": "Click the link labeled '← Back to Home'."
+        }
+      ],
+      "expected": [
+        {
+          "text": "The app navigates to the home page."
+        },
+        {
+          "text": "The heading '📰 Latest Blog Posts' is visible."
+        },
+        {
+          "text": "The previous page content is no longer shown."
+        }
+      ],
+      "expectedResult": "The app navigates to the home page. The heading '📰 Latest Blog Posts' is visible. The previous page content is no longer shown.",
+      "expectedSuccess": "The app navigates to the home page. The heading '📰 Latest Blog Posts' is visible. The previous page content is no longer shown.",
+      "expectedFailure": "",
+      "status": "pending",
+      "inputFingerprint": "8fb945aabab3818c52cf947a6f43564c0339a962bea9c825eb616f2647b46189",
+      "suiteId": "blog-pages",
+      "suiteName": "Blog Pages"
+    },
+    {
+      "id": "suite:blog-pages:navigate-to-home:empty",
+      "title": "Navigate to Home — empty",
+      "scenario": "empty",
+      "role": "Guest",
+      "steps": [
+        {
+          "text": "Start from the home page."
+        },
+        {
+          "text": "Wait for the posts request to finish and verify the current state when there are no post cards on screen."
+        }
+      ],
+      "expected": [
+        {
+          "text": "The heading '📰 Latest Blog Posts' is visible."
+        },
+        {
+          "text": "The message 'No posts available. Be the first to create one!' is visible."
+        },
+        {
+          "text": "No 'Read More →' links are visible."
+        }
+      ],
+      "expectedResult": "The heading '📰 Latest Blog Posts' is visible. The message 'No posts available. Be the first to create one!' is visible. No 'Read More →' links are visible.",
+      "expectedSuccess": "",
+      "expectedFailure": "The heading '📰 Latest Blog Posts' is visible. The message 'No posts available. Be the first to create one!' is visible. No 'Read More →' links are visible.",
+      "status": "pending",
+      "inputFingerprint": "8fb945aabab3818c52cf947a6f43564c0339a962bea9c825eb616f2647b46189",
+      "suiteId": "blog-pages",
+      "suiteName": "Blog Pages"
+    },
+    {
+      "id": "suite:blog-pages:register-user:positive",
+      "title": "Register User — positive",
+      "scenario": "positive",
+      "role": "Guest",
+      "steps": [
+        {
+          "text": "Start from the home page."
+        },
+        {
+          "text": "Click the 'Register' link in the top navigation bar."
+        },
+        {
+          "text": "Type 'newreader' into the 'Username' field."
+        },
+        {
+          "text": "Type 'newreader@example.com' into the 'Email' field."
+        },
+        {
+          "text": "Type 'Passw0rd!' into the 'Password' field."
+        },
+        {
+          "text": "Optionally choose an image file in the 'Profile Image (optional)' file field."
+        },
+        {
+          "text": "Click the 'Register' button."
+        }
+      ],
+      "expected": [
+        {
+          "text": "The app navigates to the Login page."
+        },
+        {
+          "text": "The heading 'Login' is visible."
+        },
+        {
+          "text": "The registration form is no longer shown."
+        }
+      ],
+      "expectedResult": "The app navigates to the Login page. The heading 'Login' is visible. The registration form is no longer shown.",
+      "expectedSuccess": "The app navigates to the Login page. The heading 'Login' is visible. The registration form is no longer shown.",
+      "expectedFailure": "",
+      "status": "pending",
+      "inputFingerprint": "8fb945aabab3818c52cf947a6f43564c0339a962bea9c825eb616f2647b46189",
+      "suiteId": "blog-pages",
+      "suiteName": "Blog Pages"
+    },
+    {
+      "id": "suite:blog-pages:register-user:negative",
+      "title": "Register User — negative",
+      "scenario": "negative",
+      "role": "Guest",
+      "steps": [
+        {
+          "text": "Start from the home page."
+        },
+        {
+          "text": "Click the 'Register' link in the top navigation bar."
+        },
+        {
+          "text": "Leave the 'Username', 'Email', and 'Password' fields empty."
+        },
+        {
+          "text": "Click the 'Register' button."
+        }
+      ],
+      "expected": [
+        {
+          "text": "An alert appears with the exact message 'Registration failed. Please try again.'"
+        },
+        {
+          "text": "The page remains on the registration form."
+        },
+        {
+          "text": "The button text changes to 'Registering...' while the request is in progress and then returns to 'Register' after the failure."
+        }
+      ],
+      "expectedResult": "An alert appears with the exact message 'Registration failed. Please try again.' The page remains on the registration form. The button text changes to 'Registering...' while the request is in progress and then returns to 'Register' after the failure.",
+      "expectedSuccess": "",
+      "expectedFailure": "An alert appears with the exact message 'Registration failed. Please try again.' The page remains on the registration form. The button text changes to 'Registering...' while the request is in progress and then returns to 'Register' after the failure.",
+      "status": "pending",
+      "inputFingerprint": "8fb945aabab3818c52cf947a6f43564c0339a962bea9c825eb616f2647b46189",
+      "suiteId": "blog-pages",
+      "suiteName": "Blog Pages"
+    },
+    {
+      "id": "suite:blog-pages:register-user:boundary",
+      "title": "Register User — boundary",
+      "scenario": "boundary",
+      "role": "Guest",
+      "steps": [
+        {
+          "text": "Start from the home page."
+        },
+        {
+          "text": "Click the 'Register' link in the top navigation bar."
+        },
+        {
+          "text": "Type a very long username into the 'Username' field."
+        },
+        {
+          "text": "Type 'a@b.co' into the 'Email' field."
+        },
+        {
+          "text": "Type a very long password into the 'Password' field."
+        },
+        {
+          "text": "Do not choose a profile image."
+        },
+        {
+          "text": "Click the 'Register' button."
+        }
+      ],
+      "expected": [
+        {
+          "text": "The form submits without any client-side validation message shown on screen."
+        },
+        {
+          "text": "If the server accepts the values, the app navigates to the Login page and the heading 'Login' is visible."
+        },
+        {
+          "text": "If the server rejects the values, an alert appears with the exact message 'Registration failed. Please try again.'"
+        }
+      ],
+      "expectedResult": "The form submits without any client-side validation message shown on screen. If the server accepts the values, the app navigates to the Login page and the heading 'Login' is visible. If the server rejects the values, an alert appears with the exact message 'Registration failed. Please try again.'",
+      "expectedSuccess": "",
+      "expectedFailure": "The form submits without any client-side validation message shown on screen. If the server accepts the values, the app navigates to the Login page and the heading 'Login' is visible. If the server rejects the values, an alert appears with the exact message 'Registration failed. Please try again.'",
+      "status": "pending",
+      "inputFingerprint": "8fb945aabab3818c52cf947a6f43564c0339a962bea9c825eb616f2647b46189",
+      "suiteId": "blog-pages",
+      "suiteName": "Blog Pages"
+    },
+    {
+      "id": "suite:blog-pages:log-in:positive",
+      "title": "Log In — positive",
+      "scenario": "positive",
+      "role": "Guest",
+      "steps": [
+        {
+          "text": "Start from the home page."
+        },
+        {
+          "text": "Click the 'Login' link in the top navigation bar."
+        },
+        {
+          "text": "Type 'reader@example.com' into the 'Email' field."
+        },
+        {
+          "text": "Type 'Passw0rd!' into the 'Password' field."
+        },
+        {
+          "text": "Click the 'Login' button."
+        }
+      ],
+      "expected": [
+        {
+          "text": "The app navigates to the home page."
+        },
+        {
+          "text": "The heading '📰 Latest Blog Posts' is visible."
+        },
+        {
+          "text": "The top navigation bar shows 'Create Post' and 'Logout' instead of the guest 'Login' and 'Register' links."
+        }
+      ],
+      "expectedResult": "The app navigates to the home page. The heading '📰 Latest Blog Posts' is visible. The top navigation bar shows 'Create Post' and 'Logout' instead of the guest 'Login' and 'Register' links.",
+      "expectedSuccess": "The app navigates to the home page. The heading '📰 Latest Blog Posts' is visible. The top navigation bar shows 'Create Post' and 'Logout' instead of the guest 'Login' and 'Register' links.",
+      "expectedFailure": "",
+      "status": "pending",
+      "inputFingerprint": "8fb945aabab3818c52cf947a6f43564c0339a962bea9c825eb616f2647b46189",
+      "suiteId": "blog-pages",
+      "suiteName": "Blog Pages"
+    },
+    {
+      "id": "suite:blog-pages:log-in:negative",
+      "title": "Log In — negative",
+      "scenario": "negative",
+      "role": "Guest",
+      "steps": [
+        {
+          "text": "Start from the home page."
+        },
+        {
+          "text": "Click the 'Login' link in the top navigation bar."
+        },
+        {
+          "text": "Type 'reader@example.com' into the 'Email' field."
+        },
+        {
+          "text": "Type 'wrong-password' into the 'Password' field."
+        },
+        {
+          "text": "Click the 'Login' button."
+        }
+      ],
+      "expected": [
+        {
+          "text": "An alert appears with the exact message 'Login failed' unless the server returns a more specific message."
+        },
+        {
+          "text": "The app stays on the Login page."
+        },
+        {
+          "text": "The heading 'Login' remains visible."
+        }
+      ],
+      "expectedResult": "An alert appears with the exact message 'Login failed' unless the server returns a more specific message. The app stays on the Login page. The heading 'Login' remains visible.",
+      "expectedSuccess": "",
+      "expectedFailure": "An alert appears with the exact message 'Login failed' unless the server returns a more specific message. The app stays on the Login page. The heading 'Login' remains visible.",
+      "status": "pending",
+      "inputFingerprint": "8fb945aabab3818c52cf947a6f43564c0339a962bea9c825eb616f2647b46189",
+      "suiteId": "blog-pages",
+      "suiteName": "Blog Pages"
+    },
+    {
+      "id": "suite:blog-pages:log-in:boundary",
+      "title": "Log In — boundary",
+      "scenario": "boundary",
+      "role": "Guest",
+      "steps": [
+        {
+          "text": "Start from the home page."
+        },
+        {
+          "text": "Click the 'Login' link in the top navigation bar."
+        },
+        {
+          "text": "Type 'a@b.co' into the 'Email' field."
+        },
+        {
+          "text": "Type a very long password into the 'Password' field."
+        },
+        {
+          "text": "Click the 'Login' button."
+        }
+      ],
+      "expected": [
+        {
+          "text": "The form accepts the typed values in the 'Email' and 'Password' fields."
+        },
+        {
+          "text": "If authentication succeeds, the app navigates to the home page and the heading '📰 Latest Blog Posts' is visible."
+        },
+        {
+          "text": "If authentication fails, an alert appears with the exact message 'Login failed' unless the server returns a more specific message."
+        }
+      ],
+      "expectedResult": "The form accepts the typed values in the 'Email' and 'Password' fields. If authentication succeeds, the app navigates to the home page and the heading '📰 Latest Blog Posts' is visible. If authentication fails, an alert appears with the exact message 'Login failed' unless the server returns a more specific message.",
+      "expectedSuccess": "",
+      "expectedFailure": "The form accepts the typed values in the 'Email' and 'Password' fields. If authentication succeeds, the app navigates to the home page and the heading '📰 Latest Blog Posts' is visible. If authentication fails, an alert appears with the exact message 'Login failed' unless the server returns a more specific message.",
+      "status": "pending",
+      "inputFingerprint": "8fb945aabab3818c52cf947a6f43564c0339a962bea9c825eb616f2647b46189",
+      "suiteId": "blog-pages",
+      "suiteName": "Blog Pages"
+    },
+    {
+      "id": "suite:blog-pages:create-post:positive",
+      "title": "Create Post — positive",
+      "scenario": "positive",
+      "role": "Authenticated User",
+      "steps": [
+        {
+          "text": "Start from the home page while signed in."
+        },
+        {
+          "text": "Click the 'Create Post' link in the top navigation bar."
+        },
+        {
+          "text": "Type 'Weekend Garden Update' into the 'Title' field."
+        },
+        {
+          "text": "Type 'Planted tomatoes and basil today. The first sprouts are already visible.' into the 'Content' field."
+        },
+        {
+          "text": "Optionally choose an image file in the file field."
+        },
+        {
+          "text": "Click the 'Create Post' button."
+        }
+      ],
+      "expected": [
+        {
+          "text": "The app navigates to the home page."
+        },
+        {
+          "text": "The heading '📰 Latest Blog Posts' is visible."
+        },
+        {
+          "text": "The newly created post is added to the list of posts."
+        }
+      ],
+      "expectedResult": "The app navigates to the home page. The heading '📰 Latest Blog Posts' is visible. The newly created post is added to the list of posts.",
+      "expectedSuccess": "The app navigates to the home page. The heading '📰 Latest Blog Posts' is visible. The newly created post is added to the list of posts.",
+      "expectedFailure": "",
+      "status": "pending",
+      "inputFingerprint": "8fb945aabab3818c52cf947a6f43564c0339a962bea9c825eb616f2647b46189",
+      "suiteId": "blog-pages",
+      "suiteName": "Blog Pages"
+    },
+    {
+      "id": "suite:blog-pages:create-post:negative",
+      "title": "Create Post — negative",
+      "scenario": "negative",
+      "role": "Authenticated User",
+      "steps": [
+        {
+          "text": "Start from the Create a Post screen while signed in."
+        },
+        {
+          "text": "Leave the 'Title' and 'Content' fields empty."
+        },
+        {
+          "text": "Click the 'Create Post' button."
+        }
+      ],
+      "expected": [
+        {
+          "text": "No client-side error message is shown because the form does not render validation text."
+        },
+        {
+          "text": "If the request fails, the page stays on the Create a Post screen and the post is not added to the home page list."
+        },
+        {
+          "text": "If the request succeeds despite empty values, the app navigates to the home page and the heading '📰 Latest Blog Posts' is visible."
+        }
+      ],
+      "expectedResult": "No client-side error message is shown because the form does not render validation text. If the request fails, the page stays on the Create a Post screen and the post is not added to the home page list. If the request succeeds despite empty values, the app navigates to the home page and the heading '📰 Latest Blog Posts' is visible.",
+      "expectedSuccess": "",
+      "expectedFailure": "No client-side error message is shown because the form does not render validation text. If the request fails, the page stays on the Create a Post screen and the post is not added to the home page list. If the request succeeds despite empty values, the app navigates to the home page and the heading '📰 Latest Blog Posts' is visible.",
+      "status": "pending",
+      "inputFingerprint": "8fb945aabab3818c52cf947a6f43564c0339a962bea9c825eb616f2647b46189",
+      "suiteId": "blog-pages",
+      "suiteName": "Blog Pages"
+    },
+    {
+      "id": "suite:blog-pages:create-post:boundary",
+      "title": "Create Post — boundary",
+      "scenario": "boundary",
+      "role": "Authenticated User",
+      "steps": [
+        {
+          "text": "Start from the Create a Post screen while signed in."
+        },
+        {
+          "text": "Type a one-character title 'A' into the 'Title' field."
+        },
+        {
+          "text": "Type a very long paragraph into the 'Content' field."
+        },
+        {
+          "text": "Choose an image file in the file field."
+        },
+        {
+          "text": "Click the 'Create Post' button."
+        }
+      ],
+      "expected": [
+        {
+          "text": "The values remain visible in the 'Title' and 'Content' fields before submission."
+        },
+        {
+          "text": "If the request succeeds, the app navigates to the home page and the heading '📰 Latest Blog Posts' is visible."
+        },
+        {
+          "text": "If the request fails, the page remains on Create a Post and no success text is shown."
+        }
+      ],
+      "expectedResult": "The values remain visible in the 'Title' and 'Content' fields before submission. If the request succeeds, the app navigates to the home page and the heading '📰 Latest Blog Posts' is visible. If the request fails, the page remains on Create a Post and no success text is shown.",
+      "expectedSuccess": "",
+      "expectedFailure": "The values remain visible in the 'Title' and 'Content' fields before submission. If the request succeeds, the app navigates to the home page and the heading '📰 Latest Blog Posts' is visible. If the request fails, the page remains on Create a Post and no success text is shown.",
+      "status": "pending",
+      "inputFingerprint": "8fb945aabab3818c52cf947a6f43564c0339a962bea9c825eb616f2647b46189",
+      "suiteId": "blog-pages",
+      "suiteName": "Blog Pages"
+    },
+    {
+      "id": "suite:blog-pages:view-post-details:positive",
+      "title": "View Post Details — positive",
+      "scenario": "positive",
+      "role": "Guest",
+      "steps": [
+        {
+          "text": "Start from the home page."
+        },
+        {
+          "text": "Click a 'Read More →' link on any post card."
+        },
+        {
+          "text": "Wait for the post detail page to load."
+        }
+      ],
+      "expected": [
+        {
+          "text": "The post detail page shows the post title."
+        },
+        {
+          "text": "The author name is visible; if no author username is available, the text 'Unknown Author' is shown."
+        },
+        {
+          "text": "The post content is visible, and if the post has an image, it is shown above the title/content area."
+        }
+      ],
+      "expectedResult": "The post detail page shows the post title. The author name is visible; if no author username is available, the text 'Unknown Author' is shown. The post content is visible, and if the post has an image, it is shown above the title/content area.",
+      "expectedSuccess": "The post detail page shows the post title. The author name is visible; if no author username is available, the text 'Unknown Author' is shown. The post content is visible, and if the post has an image, it is shown above the title/content area.",
+      "expectedFailure": "",
+      "status": "pending",
+      "inputFingerprint": "8fb945aabab3818c52cf947a6f43564c0339a962bea9c825eb616f2647b46189",
+      "suiteId": "blog-pages",
+      "suiteName": "Blog Pages"
+    },
+    {
+      "id": "suite:blog-pages:view-post-details:negative",
+      "title": "View Post Details — negative",
+      "scenario": "negative",
+      "role": "Guest",
+      "steps": [
+        {
+          "text": "Start from the home page."
+        },
+        {
+          "text": "Open a direct post URL that does not resolve to an existing post or wait for a failed load."
+        },
+        {
+          "text": "Wait for the page to finish loading."
+        }
+      ],
+      "expected": [
+        {
+          "text": "A red message is visible with the exact text 'Post not found' or 'Failed to load post'."
+        },
+        {
+          "text": "The link 'Back to Home' is visible."
+        },
+        {
+          "text": "No edit or delete controls are visible."
+        }
+      ],
+      "expectedResult": "A red message is visible with the exact text 'Post not found' or 'Failed to load post'. The link 'Back to Home' is visible. No edit or delete controls are visible.",
+      "expectedSuccess": "",
+      "expectedFailure": "A red message is visible with the exact text 'Post not found' or 'Failed to load post'. The link 'Back to Home' is visible. No edit or delete controls are visible.",
+      "status": "pending",
+      "inputFingerprint": "8fb945aabab3818c52cf947a6f43564c0339a962bea9c825eb616f2647b46189",
+      "suiteId": "blog-pages",
+      "suiteName": "Blog Pages"
+    },
+    {
+      "id": "suite:blog-pages:view-post-details:empty",
+      "title": "View Post Details — empty",
+      "scenario": "empty",
+      "role": "Guest",
+      "steps": [
+        {
+          "text": "Start from the home page."
+        },
+        {
+          "text": "Open a post detail page where the returned post has no author username and no image."
+        },
+        {
+          "text": "Wait for the post detail page to load."
+        }
+      ],
+      "expected": [
+        {
+          "text": "The text 'Unknown Author' is visible."
+        },
+        {
+          "text": "No post image is shown."
+        },
+        {
+          "text": "The post title and post content are still visible."
+        }
+      ],
+      "expectedResult": "The text 'Unknown Author' is visible. No post image is shown. The post title and post content are still visible.",
+      "expectedSuccess": "",
+      "expectedFailure": "The text 'Unknown Author' is visible. No post image is shown. The post title and post content are still visible.",
+      "status": "pending",
+      "inputFingerprint": "8fb945aabab3818c52cf947a6f43564c0339a962bea9c825eb616f2647b46189",
+      "suiteId": "blog-pages",
+      "suiteName": "Blog Pages"
+    },
+    {
+      "id": "suite:blog-pages:edit-post:positive",
+      "title": "Edit Post — positive",
+      "scenario": "positive",
+      "role": "Authenticated User",
+      "steps": [
+        {
+          "text": "Start from the home page while signed in as the post author."
+        },
+        {
+          "text": "Open one of your own posts from a 'Read More →' link."
+        },
+        {
+          "text": "Click the '✏️ Edit' button."
+        },
+        {
+          "text": "Type 'Weekend Garden Update - Revised' into the 'Title' field."
+        },
+        {
+          "text": "Type 'Added photos and a note about watering the seedlings.' into the 'Content' field."
+        },
+        {
+          "text": "Optionally choose a replacement image file in the 'Replace Image (optional)' file field."
+        },
+        {
+          "text": "Click the 'Update Post' button."
+        }
+      ],
+      "expected": [
+        {
+          "text": "An alert appears with the exact message '✅ Post updated successfully!'"
+        },
+        {
+          "text": "The app navigates to the post detail page for that post."
+        },
+        {
+          "text": "The updated title and content are visible on the detail page."
+        }
+      ],
+      "expectedResult": "An alert appears with the exact message '✅ Post updated successfully!' The app navigates to the post detail page for that post. The updated title and content are visible on the detail page.",
+      "expectedSuccess": "An alert appears with the exact message '✅ Post updated successfully!' The app navigates to the post detail page for that post. The updated title and content are visible on the detail page.",
+      "expectedFailure": "",
+      "status": "pending",
+      "inputFingerprint": "8fb945aabab3818c52cf947a6f43564c0339a962bea9c825eb616f2647b46189",
+      "suiteId": "blog-pages",
+      "suiteName": "Blog Pages"
+    },
+    {
+      "id": "suite:blog-pages:edit-post:negative",
+      "title": "Edit Post — negative",
+      "scenario": "negative",
+      "role": "Authenticated User",
+      "steps": [
+        {
+          "text": "Start from the home page while signed in."
+        },
+        {
+          "text": "Open your own post from a 'Read More →' link."
+        },
+        {
+          "text": "Click the '✏️ Edit' button."
+        },
+        {
+          "text": "Clear the 'Title' and 'Content' fields."
+        },
+        {
+          "text": "Click the 'Update Post' button."
+        }
+      ],
+      "expected": [
+        {
+          "text": "If the user is not logged in, an alert appears with the exact message 'You must be logged in to edit a post!'"
+        },
+        {
+          "text": "If the update request fails, the visible error message on the page shows the server text or 'Failed to update'."
+        },
+        {
+          "text": "The button label can change to 'Updating...' while the request is in progress."
+        }
+      ],
+      "expectedResult": "If the user is not logged in, an alert appears with the exact message 'You must be logged in to edit a post!' If the update request fails, the visible error message on the page shows the server text or 'Failed to update'. The button label can change to 'Updating...' while the request is in progress.",
+      "expectedSuccess": "",
+      "expectedFailure": "If the user is not logged in, an alert appears with the exact message 'You must be logged in to edit a post!' If the update request fails, the visible error message on the page shows the server text or 'Failed to update'. The button label can change to 'Updating...' while the request is in progress.",
+      "status": "pending",
+      "inputFingerprint": "8fb945aabab3818c52cf947a6f43564c0339a962bea9c825eb616f2647b46189",
+      "suiteId": "blog-pages",
+      "suiteName": "Blog Pages"
+    },
+    {
+      "id": "suite:blog-pages:edit-post:boundary",
+      "title": "Edit Post — boundary",
+      "scenario": "boundary",
+      "role": "Authenticated User",
+      "steps": [
+        {
+          "text": "Start from the home page while signed in."
+        },
+        {
+          "text": "Open your own post from a 'Read More →' link."
+        },
+        {
+          "text": "Click the '✏️ Edit' button."
+        },
+        {
+          "text": "Type a one-character title 'A' into the 'Title' field."
+        },
+        {
+          "text": "Type a very long content block into the 'Content' field."
+        },
+        {
+          "text": "Choose a replacement image file using the 'Replace Image (optional)' file field."
+        },
+        {
+          "text": "Click the 'Update Post' button."
+        }
+      ],
+      "expected": [
+        {
+          "text": "The preview image area is shown when an image file is selected."
+        },
+        {
+          "text": "If the update succeeds, an alert appears with the exact message '✅ Post updated successfully!'"
+        },
+        {
+          "text": "The app navigates back to the post detail page after a successful update."
+        }
+      ],
+      "expectedResult": "The preview image area is shown when an image file is selected. If the update succeeds, an alert appears with the exact message '✅ Post updated successfully!' The app navigates back to the post detail page after a successful update.",
+      "expectedSuccess": "",
+      "expectedFailure": "The preview image area is shown when an image file is selected. If the update succeeds, an alert appears with the exact message '✅ Post updated successfully!' The app navigates back to the post detail page after a successful update.",
+      "status": "pending",
+      "inputFingerprint": "8fb945aabab3818c52cf947a6f43564c0339a962bea9c825eb616f2647b46189",
+      "suiteId": "blog-pages",
+      "suiteName": "Blog Pages"
+    },
+    {
+      "id": "suite:blog-pages:edit-post:authorization",
+      "title": "Edit Post — authorization",
+      "scenario": "authorization",
+      "role": "Guest",
+      "steps": [
+        {
+          "text": "Start from the home page."
+        },
+        {
+          "text": "Open a post detail page for any post."
+        },
+        {
+          "text": "Wait for the post detail page to finish loading."
+        }
+      ],
+      "expected": [
+        {
+          "text": "The '✏️ Edit' button is not visible."
+        },
+        {
+          "text": "The '🗑️ Delete' button is not visible."
+        },
+        {
+          "text": "The post title, author, date, and content remain visible."
+        }
+      ],
+      "expectedResult": "The '✏️ Edit' button is not visible. The '🗑️ Delete' button is not visible. The post title, author, date, and content remain visible.",
+      "expectedSuccess": "",
+      "expectedFailure": "The '✏️ Edit' button is not visible. The '🗑️ Delete' button is not visible. The post title, author, date, and content remain visible.",
+      "status": "pending",
+      "inputFingerprint": "8fb945aabab3818c52cf947a6f43564c0339a962bea9c825eb616f2647b46189",
+      "suiteId": "blog-pages",
+      "suiteName": "Blog Pages"
+    },
+    {
+      "id": "suite:blog-pages:delete-post:positive",
+      "title": "Delete Post — positive",
+      "scenario": "positive",
+      "role": "Authenticated User",
+      "steps": [
+        {
+          "text": "Start from the home page while signed in as the post author."
+        },
+        {
+          "text": "Open one of your own posts from a 'Read More →' link."
+        },
+        {
+          "text": "Click the '🗑️ Delete' button."
+        },
+        {
+          "text": "In the confirmation dialog, choose to proceed with the message 'Are you sure you want to delete this post?'."
+        }
+      ],
+      "expected": [
+        {
+          "text": "An alert appears with the exact message '🗑️ Post deleted successfully!'"
+        },
+        {
+          "text": "The app navigates to the home page."
+        },
+        {
+          "text": "The deleted post no longer appears in the posts list."
+        }
+      ],
+      "expectedResult": "An alert appears with the exact message '🗑️ Post deleted successfully!' The app navigates to the home page. The deleted post no longer appears in the posts list.",
+      "expectedSuccess": "An alert appears with the exact message '🗑️ Post deleted successfully!' The app navigates to the home page. The deleted post no longer appears in the posts list.",
+      "expectedFailure": "",
+      "status": "pending",
+      "inputFingerprint": "8fb945aabab3818c52cf947a6f43564c0339a962bea9c825eb616f2647b46189",
+      "suiteId": "blog-pages",
+      "suiteName": "Blog Pages"
+    },
+    {
+      "id": "suite:blog-pages:delete-post:negative",
+      "title": "Delete Post — negative",
+      "scenario": "negative",
+      "role": "Authenticated User",
+      "steps": [
+        {
+          "text": "Start from the home page while signed in as the post author."
+        },
+        {
+          "text": "Open one of your own posts from a 'Read More →' link."
+        },
+        {
+          "text": "Click the '🗑️ Delete' button."
+        },
+        {
+          "text": "Dismiss the confirmation dialog prompted by 'Are you sure you want to delete this post?'."
+        }
+      ],
+      "expected": [
+        {
+          "text": "No deletion request is sent after canceling the confirmation dialog."
+        },
+        {
+          "text": "No success alert is shown."
+        },
+        {
+          "text": "The user stays on the same post detail page."
+        }
+      ],
+      "expectedResult": "No deletion request is sent after canceling the confirmation dialog. No success alert is shown. The user stays on the same post detail page.",
+      "expectedSuccess": "",
+      "expectedFailure": "No deletion request is sent after canceling the confirmation dialog. No success alert is shown. The user stays on the same post detail page.",
+      "status": "pending",
+      "inputFingerprint": "8fb945aabab3818c52cf947a6f43564c0339a962bea9c825eb616f2647b46189",
+      "suiteId": "blog-pages",
+      "suiteName": "Blog Pages"
+    },
+    {
+      "id": "suite:blog-pages:delete-post:boundary",
+      "title": "Delete Post — boundary",
+      "scenario": "boundary",
+      "role": "Authenticated User",
+      "steps": [
+        {
+          "text": "Start from the home page while signed in as the post author."
+        },
+        {
+          "text": "Open your own post from a 'Read More →' link."
+        },
+        {
+          "text": "Click the '🗑️ Delete' button."
+        },
+        {
+          "text": "Repeatedly interact with the confirmation flow around 'Are you sure you want to delete this post?' to verify the final choice controls the outcome."
+        }
+      ],
+      "expected": [
+        {
+          "text": "If deletion is confirmed, the alert '🗑️ Post deleted successfully!' is shown and the app returns to the home page."
+        },
+        {
+          "text": "If deletion is canceled, the post remains visible on the detail page and no success alert appears."
+        },
+        {
+          "text": "Only confirmed deletion removes the post from the list."
+        }
+      ],
+      "expectedResult": "If deletion is confirmed, the alert '🗑️ Post deleted successfully!' is shown and the app returns to the home page. If deletion is canceled, the post remains visible on the detail page and no success alert appears. Only confirmed deletion removes the post from the list.",
+      "expectedSuccess": "",
+      "expectedFailure": "If deletion is confirmed, the alert '🗑️ Post deleted successfully!' is shown and the app returns to the home page. If deletion is canceled, the post remains visible on the detail page and no success alert appears. Only confirmed deletion removes the post from the list.",
+      "status": "pending",
+      "inputFingerprint": "8fb945aabab3818c52cf947a6f43564c0339a962bea9c825eb616f2647b46189",
+      "suiteId": "blog-pages",
+      "suiteName": "Blog Pages"
+    },
+    {
+      "id": "suite:blog-pages:delete-post:authorization",
+      "title": "Delete Post — authorization",
+      "scenario": "authorization",
+      "role": "Guest",
+      "steps": [
+        {
+          "text": "Start from the home page."
+        },
+        {
+          "text": "Open any post detail page."
+        },
+        {
+          "text": "Wait for the post detail page to load."
+        }
+      ],
+      "expected": [
+        {
+          "text": "The '🗑️ Delete' button is not visible."
+        },
+        {
+          "text": "The '✏️ Edit' button is not visible."
+        },
+        {
+          "text": "The post can still be read with its title, author, date, and content visible."
+        }
+      ],
+      "expectedResult": "The '🗑️ Delete' button is not visible. The '✏️ Edit' button is not visible. The post can still be read with its title, author, date, and content visible.",
+      "expectedSuccess": "",
+      "expectedFailure": "The '🗑️ Delete' button is not visible. The '✏️ Edit' button is not visible. The post can still be read with its title, author, date, and content visible.",
+      "status": "pending",
+      "inputFingerprint": "8fb945aabab3818c52cf947a6f43564c0339a962bea9c825eb616f2647b46189",
+      "suiteId": "blog-pages",
+      "suiteName": "Blog Pages"
+    },
+    {
+      "id": "suite:blog-pages:log-out:positive",
+      "title": "Log Out — positive",
+      "scenario": "positive",
+      "role": "Authenticated User",
+      "steps": [
+        {
+          "text": "Start from the home page while signed in."
+        },
+        {
+          "text": "Verify the navigation bar shows the 'Logout' button."
+        },
+        {
+          "text": "Click the 'Logout' button."
+        }
+      ],
+      "expected": [
+        {
+          "text": "The app navigates to the Login page."
+        },
+        {
+          "text": "The heading 'Login' is visible."
+        },
+        {
+          "text": "The navigation bar now shows the guest links 'Login' and 'Register' instead of 'Create Post' and 'Logout'."
+        }
+      ],
+      "expectedResult": "The app navigates to the Login page. The heading 'Login' is visible. The navigation bar now shows the guest links 'Login' and 'Register' instead of 'Create Post' and 'Logout'.",
+      "expectedSuccess": "The app navigates to the Login page. The heading 'Login' is visible. The navigation bar now shows the guest links 'Login' and 'Register' instead of 'Create Post' and 'Logout'.",
+      "expectedFailure": "",
+      "status": "pending",
+      "inputFingerprint": "8fb945aabab3818c52cf947a6f43564c0339a962bea9c825eb616f2647b46189",
+      "suiteId": "blog-pages",
+      "suiteName": "Blog Pages"
+    },
+    {
+      "id": "suite:blog-pages:log-out:authorization",
+      "title": "Log Out — authorization",
+      "scenario": "authorization",
+      "role": "Guest",
+      "steps": [
+        {
+          "text": "Start from the home page while not signed in."
+        },
+        {
+          "text": "Inspect the top navigation bar."
+        }
+      ],
+      "expected": [
+        {
+          "text": "The 'Logout' button is not visible."
+        },
+        {
+          "text": "The 'Create Post' link is not visible."
+        },
+        {
+          "text": "The 'Login' and 'Register' links are visible."
+        }
+      ],
+      "expectedResult": "The 'Logout' button is not visible. The 'Create Post' link is not visible. The 'Login' and 'Register' links are visible.",
+      "expectedSuccess": "",
+      "expectedFailure": "The 'Logout' button is not visible. The 'Create Post' link is not visible. The 'Login' and 'Register' links are visible.",
+      "status": "pending",
+      "inputFingerprint": "8fb945aabab3818c52cf947a6f43564c0339a962bea9c825eb616f2647b46189",
+      "suiteId": "blog-pages",
+      "suiteName": "Blog Pages"
+    }
+  ]
+}

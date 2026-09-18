@@ -1,0 +1,11 @@
+{
+  "templateVersion": "manual-ft-v17",
+  "mode": "greenfield",
+  "repoMapFingerprint": "27a0bf697c769377347eed2e91abde490351e4d3af9459f5f92f61ac36462043",
+  "targetsFingerprint": "81227cefe552dbe70d4f899b11442a8c8bfb15eb64dc4dfee760b0fa82e566a7",
+  "sourcesHash": "81227cefe552dbe70d4f899b11442a8c8bfb15eb64dc4dfee760b0fa82e566a7",
+  "camFingerprint": "0eea04224d247893173ab5248dd246ef526bb489eca743690907363f00d8d725",
+  "sourceBranch": null,
+  "targetBranch": "main",
+  "generatedAt": "2026-09-18T12:13:01.489Z"
+}
