@@ -1,0 +1,22 @@
+{
+  "repoMapFingerprint": "27a0bf697c769377347eed2e91abde490351e4d3af9459f5f92f61ac36462043",
+  "targetsFingerprint": "81227cefe552dbe70d4f899b11442a8c8bfb15eb64dc4dfee760b0fa82e566a7",
+  "generatedAt": "2026-09-18T12:11:58.167Z",
+  "suites": [
+    {
+      "id": "blog-pages",
+      "name": "Blog Pages",
+      "paths": [
+        "client/src/components/Pages/CreatePost.jsx",
+        "client/src/components/Pages/EditPost.jsx",
+        "client/src/components/Pages/Home.jsx",
+        "client/src/components/Pages/Login.jsx",
+        "client/src/components/Pages/NotFound.jsx",
+        "client/src/components/Pages/PostDetails.jsx",
+        "client/src/components/Pages/Register.jsx",
+        "client/src/components/PosterCard.jsx",
+        "client/src/components/Navbar.jsx"
+      ]
+    }
+  ]
+}
