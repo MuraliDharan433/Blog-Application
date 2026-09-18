@@ -1,0 +1,868 @@
+{
+  "engineVersion": "v2",
+  "mode": "greenfield",
+  "branch": "main",
+  "sourceBranch": null,
+  "generatedAt": "2026-09-18T12:11:43.496Z",
+  "fingerprint": "27a0bf697c769377347eed2e91abde490351e4d3af9459f5f92f61ac36462043",
+  "product": {
+    "name": "Blog-Application",
+    "stack": "unknown",
+    "entryPoints": []
+  },
+  "files": [
+    {
+      "path": "client/eslint.config.js",
+      "sha": "cee1e2c788d908e4a8ff796eb6edbe73ee73fffd",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [
+        "default"
+      ],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "client/package.json",
+      "sha": "92c58c86bcce74dc518987df294bd2b5b495cac9",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "client/README.md",
+      "sha": "18bc70ebe277fbfe6e55e6f9a0ae7e2c3e4bdd83",
+      "change": "unchanged",
+      "kind": "other",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "client/src/api.js",
+      "sha": "39760b095bf3e07e96c961f36be7b8f35a60f9d1",
+      "change": "unchanged",
+      "kind": "other",
+      "exports": [
+        "default"
+      ],
+      "symbols": [
+        "API",
+        "token"
+      ],
+      "imports": []
+    },
+    {
+      "path": "client/src/App.jsx",
+      "sha": "cbccc06f4d3ed52f725166d330b0dc44fc039c6b",
+      "change": "unchanged",
+      "kind": "other",
+      "exports": [
+        "default"
+      ],
+      "symbols": [
+        "App"
+      ],
+      "imports": [
+        "client/src/components/Navbar.jsx",
+        "client/src/components/Pages/CreatePost.jsx",
+        "client/src/components/Pages/EditPost.jsx",
+        "client/src/components/Pages/Home.jsx",
+        "client/src/components/Pages/Login.jsx",
+        "client/src/components/Pages/NotFound.jsx",
+        "client/src/components/Pages/PostDetails.jsx",
+        "client/src/components/Pages/Register.jsx",
+        "client/src/utils/PrivateRoute.jsx"
+      ]
+    },
+    {
+      "path": "client/src/components/Navbar.jsx",
+      "sha": "394169ec8c7d657257faa1832175fee859ab8226",
+      "change": "unchanged",
+      "kind": "component",
+      "exports": [
+        "default"
+      ],
+      "symbols": [
+        "Navbar",
+        "dispatch",
+        "handleLogout",
+        "navigate"
+      ],
+      "imports": [
+        "client/src/redux/slices/authSlice.js"
+      ]
+    },
+    {
+      "path": "client/src/components/Pages/CreatePost.jsx",
+      "sha": "1017699b27138f57c24d9962d20e64f292cae7fc",
+      "change": "unchanged",
+      "kind": "component",
+      "exports": [
+        "default"
+      ],
+      "symbols": [
+        "CreatePost",
+        "dispatch",
+        "formData",
+        "handleSubmit",
+        "navigate"
+      ],
+      "imports": [
+        "client/src/api.js",
+        "client/src/redux/slices/postSlice.js"
+      ]
+    },
+    {
+      "path": "client/src/components/Pages/EditPost.jsx",
+      "sha": "2aeaea028d65f8ffb7465dab6212d71641f68d8b",
+      "change": "unchanged",
+      "kind": "component",
+      "exports": [
+        "default"
+      ],
+      "symbols": [
+        "EditPost",
+        "dispatch",
+        "file",
+        "formData",
+        "handleImageChange",
+        "handleSubmit",
+        "navigate"
+      ],
+      "imports": [
+        "client/src/api.js",
+        "client/src/redux/slices/editPostSlice.js"
+      ]
+    },
+    {
+      "path": "client/src/components/Pages/Home.jsx",
+      "sha": "aaaa1ea911ed71b4a58e92e25370ff88dda33ecb",
+      "change": "unchanged",
+      "kind": "component",
+      "exports": [
+        "default"
+      ],
+      "symbols": [
+        "Home",
+        "dispatch",
+        "fetchApi"
+      ],
+      "imports": [
+        "client/src/api.js",
+        "client/src/components/PosterCard.jsx",
+        "client/src/redux/slices/postSlice.js"
+      ]
+    },
+    {
+      "path": "client/src/components/Pages/Login.jsx",
+      "sha": "8162e7ac66bef4ca8d4115f653eccb86e4002266",
+      "change": "unchanged",
+      "kind": "component",
+      "exports": [
+        "default"
+      ],
+      "symbols": [
+        "Login",
+        "data",
+        "dispatch",
+        "handleLogin",
+        "navigate"
+      ],
+      "imports": [
+        "client/src/api.js",
+        "client/src/redux/slices/authSlice.js"
+      ]
+    },
+    {
+      "path": "client/src/components/Pages/NotFound.jsx",
+      "sha": "cbacfedf3afcbfe0e1254bfa9da2b9d88f985ec7",
+      "change": "unchanged",
+      "kind": "component",
+      "exports": [
+        "default"
+      ],
+      "symbols": [
+        "NotFound"
+      ],
+      "imports": []
+    },
+    {
+      "path": "client/src/components/Pages/PostDetails.jsx",
+      "sha": "19e579e8258c7796ccc15e90e35a71a060eab019",
+      "change": "unchanged",
+      "kind": "component",
+      "exports": [
+        "default"
+      ],
+      "symbols": [
+        "PostDetails",
+        "canEdit",
+        "dispatch",
+        "fetchPost",
+        "handleDelete",
+        "navigate"
+      ],
+      "imports": [
+        "client/src/api.js",
+        "client/src/redux/slices/singlePostSlice.js"
+      ]
+    },
+    {
+      "path": "client/src/components/Pages/Register.jsx",
+      "sha": "e967e388c40ded45ed042e1cfdaf3d50fca9b458",
+      "change": "unchanged",
+      "kind": "component",
+      "exports": [
+        "default"
+      ],
+      "symbols": [
+        "Register",
+        "form",
+        "handleChange",
+        "handleSubmit",
+        "navigate"
+      ],
+      "imports": [
+        "client/src/api.js"
+      ]
+    },
+    {
+      "path": "client/src/components/PosterCard.jsx",
+      "sha": "090504d71a2ba8169855314138de2533519b8b14",
+      "change": "unchanged",
+      "kind": "component",
+      "exports": [
+        "default"
+      ],
+      "symbols": [
+        "PosterCard"
+      ],
+      "imports": []
+    },
+    {
+      "path": "client/src/main.jsx",
+      "sha": "7f8f2d55aec870a170c114a0ac10a61d73142b13",
+      "change": "unchanged",
+      "kind": "other",
+      "exports": [],
+      "symbols": [],
+      "imports": [
+        "client/src/App.jsx",
+        "client/src/redux/store.js"
+      ]
+    },
+    {
+      "path": "client/src/redux/slices/authSlice.js",
+      "sha": "3995a4e7aeb65c559a8e3d0e3fc3969e7be79b0a",
+      "change": "unchanged",
+      "kind": "other",
+      "exports": [
+        "default"
+      ],
+      "symbols": [
+        "authSlice",
+        "initialState"
+      ],
+      "imports": []
+    },
+    {
+      "path": "client/src/redux/slices/editPostSlice.js",
+      "sha": "5c5da889b271e334ff8bf5a4ab7f200950e77640",
+      "change": "unchanged",
+      "kind": "other",
+      "exports": [
+        "default"
+      ],
+      "symbols": [
+        "editPostSlice"
+      ],
+      "imports": []
+    },
+    {
+      "path": "client/src/redux/slices/postSlice.js",
+      "sha": "7749e9ded2318e42cca1d46d2ad9844f0db2e958",
+      "change": "unchanged",
+      "kind": "other",
+      "exports": [
+        "default"
+      ],
+      "symbols": [
+        "index",
+        "postSlice"
+      ],
+      "imports": []
+    },
+    {
+      "path": "client/src/redux/slices/singlePostSlice.js",
+      "sha": "c90af9990c838b7d4dab1ff5cf7e86fca6a765b5",
+      "change": "unchanged",
+      "kind": "other",
+      "exports": [
+        "default"
+      ],
+      "symbols": [
+        "singlePostSlice"
+      ],
+      "imports": []
+    },
+    {
+      "path": "client/src/redux/store.js",
+      "sha": "89b15569f226e1ac900616c0ef7d47ca32d4343e",
+      "change": "unchanged",
+      "kind": "other",
+      "exports": [
+        "store"
+      ],
+      "symbols": [
+        "store"
+      ],
+      "imports": [
+        "client/src/redux/slices/authSlice.js",
+        "client/src/redux/slices/editPostSlice.js",
+        "client/src/redux/slices/postSlice.js",
+        "client/src/redux/slices/singlePostSlice.js"
+      ]
+    },
+    {
+      "path": "client/src/utils/PrivateRoute.jsx",
+      "sha": "038de668a7cb8a790969eeb9c4e4b87998acd26a",
+      "change": "unchanged",
+      "kind": "util",
+      "exports": [
+        "PrivateRoute"
+      ],
+      "symbols": [
+        "PrivateRoute"
+      ],
+      "imports": []
+    },
+    {
+      "path": "client/vite.config.js",
+      "sha": "629e3b6989b6760cb5545f084ca5924134dbf226",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [
+        "default"
+      ],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "README.md",
+      "sha": "b6ba56c0b05919ea299c7eb6c11e952a083c0c53",
+      "change": "unchanged",
+      "kind": "other",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/config/dbConnect.js",
+      "sha": "1d1eb921099089a979d7c058b78ec188f539d7a2",
+      "change": "unchanged",
+      "kind": "other",
+      "exports": [
+        "default"
+      ],
+      "symbols": [
+        "connectDB"
+      ],
+      "imports": []
+    },
+    {
+      "path": "server/controllers/authControllers.js",
+      "sha": "b52d4832868501f90db4c323ce2cdb0748b4f4e8",
+      "change": "unchanged",
+      "kind": "other",
+      "exports": [
+        "login",
+        "register"
+      ],
+      "symbols": [
+        "existingUser",
+        "generateToken",
+        "hashedPasswod",
+        "isMatch",
+        "login",
+        "newUser",
+        "register",
+        "user"
+      ],
+      "imports": [
+        "server/model/User.js"
+      ]
+    },
+    {
+      "path": "server/controllers/postControllers.js",
+      "sha": "82505739df6a383a613e3ca0040127d783577e15",
+      "change": "unchanged",
+      "kind": "other",
+      "exports": [
+        "addPost",
+        "deletePost",
+        "getAllPosts",
+        "getPostBasedOnId",
+        "updatedPost"
+      ],
+      "symbols": [
+        "addPost",
+        "deletePost",
+        "getAllPosts",
+        "getPostBasedOnId",
+        "imagePath",
+        "newPost",
+        "post",
+        "postId",
+        "posts",
+        "updatedPost"
+      ],
+      "imports": [
+        "server/model/Post.js"
+      ]
+    },
+    {
+      "path": "server/middleware/authMiddleware.js",
+      "sha": "4c98a1f0d7fc9bcc4eca0ba2b15f8966f673e937",
+      "change": "unchanged",
+      "kind": "other",
+      "exports": [
+        "authMiddleware"
+      ],
+      "symbols": [
+        "authMiddleware",
+        "decoded",
+        "token"
+      ],
+      "imports": []
+    },
+    {
+      "path": "server/middleware/upload.js",
+      "sha": "e186f1b9d725bafb6d321c6327a5f1ebe2ea27c4",
+      "change": "unchanged",
+      "kind": "other",
+      "exports": [
+        "default"
+      ],
+      "symbols": [
+        "allowed",
+        "fileFilter",
+        "storage",
+        "upload"
+      ],
+      "imports": []
+    },
+    {
+      "path": "server/middleware/uploadProfile.js",
+      "sha": "01f32ce911f1ba19a553d7589e1b84e5036cec01",
+      "change": "unchanged",
+      "kind": "other",
+      "exports": [
+        "default"
+      ],
+      "symbols": [
+        "allowed",
+        "fileFilter",
+        "storage",
+        "uploadProfile"
+      ],
+      "imports": []
+    },
+    {
+      "path": "server/model/Post.js",
+      "sha": "f74eb95c6ddee9b1ae331114740f15ebd3e38880",
+      "change": "unchanged",
+      "kind": "other",
+      "exports": [
+        "default"
+      ],
+      "symbols": [
+        "Post",
+        "postSchema"
+      ],
+      "imports": []
+    },
+    {
+      "path": "server/model/User.js",
+      "sha": "f1e0424452783ca2eb0b7a72996606842a6af0d1",
+      "change": "unchanged",
+      "kind": "other",
+      "exports": [
+        "default"
+      ],
+      "symbols": [
+        "User",
+        "userSchema"
+      ],
+      "imports": []
+    },
+    {
+      "path": "server/node_modules/call-bind-apply-helpers/package.json",
+      "sha": "923b8be2f14c65e78fd75a4fd34aba94fb733274",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/node_modules/call-bind-apply-helpers/tsconfig.json",
+      "sha": "aef9993084c3643257b6d6aea21f76017caf92a7",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/node_modules/call-bound/package.json",
+      "sha": "d542db430ed3b58551bbfa688d47c591e9150cb7",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/node_modules/call-bound/tsconfig.json",
+      "sha": "8976d98b8e07a7672dabcca3d68e6852d8462d5e",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/node_modules/dunder-proto/package.json",
+      "sha": "04a40367751ee4c064ac88045e79b17ba4aab0a6",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/node_modules/dunder-proto/tsconfig.json",
+      "sha": "dabbe230d74beb5962f67a6da7da18c707441ad5",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/node_modules/es-define-property/package.json",
+      "sha": "fbed187879c12efa431383a9d4b9f340e9c41184",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/node_modules/es-define-property/tsconfig.json",
+      "sha": "5a49992eafed9157e55fe5cf18a1eae8da8300fa",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/node_modules/es-errors/package.json",
+      "sha": "ff8c2a531b89061d61eadcdd419a752b79cd2daa",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/node_modules/es-errors/tsconfig.json",
+      "sha": "99dfeb6c80dfed0a80dac97c6e9f04263fec7a8c",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/node_modules/es-object-atoms/package.json",
+      "sha": "f4cec7152578638f52f6fa67a96c748271e6b4b4",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/node_modules/es-object-atoms/tsconfig.json",
+      "sha": "1f73cb725de8e34af3ce6bdd9bc9315604ca5599",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/node_modules/get-proto/package.json",
+      "sha": "9c35cec93a5697a6c0858b8bbf8092c9dcca27ee",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/node_modules/get-proto/tsconfig.json",
+      "sha": "60fb90e45970d491a68e6db8c72fcc531d13a44e",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/node_modules/gopd/package.json",
+      "sha": "01c5ffa632971171f69bd06cf866d4a3be0db124",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/node_modules/gopd/tsconfig.json",
+      "sha": "d9a6668c3ae6be748c78fbd5694053706b3d6942",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/node_modules/has-symbols/package.json",
+      "sha": "d835e20b957be00d24b62cfc3e7243cc9f133ca2",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/node_modules/has-symbols/tsconfig.json",
+      "sha": "ba99af43fe36a32096fd9bdd451c200215f9293e",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/node_modules/hasown/package.json",
+      "sha": "8502e13dd5c835ead21cfc21ead0dbdce432f741",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/node_modules/hasown/tsconfig.json",
+      "sha": "0930c565850326810b8efe09ca98895aeffd8f21",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/node_modules/math-intrinsics/package.json",
+      "sha": "067627354b768e180e286f8c2efdb0c35a188e52",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/node_modules/math-intrinsics/tsconfig.json",
+      "sha": "b131000796f0cb804c38b121021940cd962cc1a7",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/node_modules/mongodb/package.json",
+      "sha": "700b0a349fb43bcf3407251567a8b24c72506032",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/node_modules/mongodb/tsconfig.json",
+      "sha": "9915a1303f14fd2e23ec0ac061c062226c0cd6b8",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/node_modules/nodemon/jsconfig.json",
+      "sha": "d77141cb5f4b08384f3a69650fd702e6d8f094a7",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/node_modules/nodemon/package.json",
+      "sha": "52288d5c2674e57989cabd251289918c5a32760b",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/node_modules/side-channel-list/package.json",
+      "sha": "ba0f5c581f19f6f058e1237c046969655d1a83d9",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/node_modules/side-channel-list/tsconfig.json",
+      "sha": "d9a6668c3ae6be748c78fbd5694053706b3d6942",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/node_modules/side-channel-map/package.json",
+      "sha": "18e80805905c32cf286aa286e1a0c8f8248ec574",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/node_modules/side-channel-map/tsconfig.json",
+      "sha": "d9a6668c3ae6be748c78fbd5694053706b3d6942",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/node_modules/side-channel-weakmap/package.json",
+      "sha": "9ef6583335d8670f8f86c7508cd047c6ae224a68",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/node_modules/side-channel-weakmap/tsconfig.json",
+      "sha": "d9a6668c3ae6be748c78fbd5694053706b3d6942",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/node_modules/side-channel/package.json",
+      "sha": "30fa42cd86682a8ddf0b3b6817236ca94d7463d3",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/node_modules/side-channel/tsconfig.json",
+      "sha": "d9a6668c3ae6be748c78fbd5694053706b3d6942",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/package.json",
+      "sha": "9870e8af64788856640bfec025665837295fc50e",
+      "change": "unchanged",
+      "kind": "config",
+      "exports": [],
+      "symbols": [],
+      "imports": []
+    },
+    {
+      "path": "server/routers/authRouter.js",
+      "sha": "236a320e6efa351b426ea68a6a65776410b10777",
+      "change": "unchanged",
+      "kind": "other",
+      "exports": [
+        "default"
+      ],
+      "symbols": [
+        "auth"
+      ],
+      "imports": [
+        "server/controllers/authControllers.js",
+        "server/middleware/uploadProfile.js"
+      ]
+    },
+    {
+      "path": "server/routers/postRouter.js",
+      "sha": "98a1816468c26f9d433d27bf5853143296d32f6b",
+      "change": "unchanged",
+      "kind": "other",
+      "exports": [
+        "default"
+      ],
+      "symbols": [
+        "poster"
+      ],
+      "imports": [
+        "server/controllers/postControllers.js",
+        "server/middleware/authMiddleware.js",
+        "server/middleware/upload.js"
+      ]
+    },
+    {
+      "path": "server/server.js",
+      "sha": "3f3907108a1c3002338acdedd53533ceac807d05",
+      "change": "unchanged",
+      "kind": "other",
+      "exports": [],
+      "symbols": [
+        "PORT",
+        "__dirname",
+        "__filename",
+        "app"
+      ],
+      "imports": [
+        "server/config/dbConnect.js",
+        "server/routers/authRouter.js",
+        "server/routers/postRouter.js"
+      ]
+    }
+  ]
+}
